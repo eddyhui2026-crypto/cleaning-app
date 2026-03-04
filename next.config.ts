@@ -1,22 +1,12 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  // 讓 Vercel 忽略 TypeScript 錯誤，確保能順利 Build
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  /* config options here */
   typescript: {
+    // 依然保留呢個，確保 Build 唔會因為 TypeScript 警告而中斷
     ignoreBuildErrors: true,
   },
-  // 讓 Vercel 忽略 ESLint 錯誤
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  // 如果你有用到圖片（例如 Supabase Storage），建議加上這個
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '**', // 允許所有外部圖片來源，方便測試
-      },
-    ],
-  },
+  // 刪除原本嘅 eslint 部分
 };
 
 export default nextConfig;
