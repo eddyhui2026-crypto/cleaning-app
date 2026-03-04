@@ -1,7 +1,6 @@
-// app/page.tsx
+// Force redeploy - 2026-03-04
 import { redirect } from 'next/navigation';
 
 export default function Home() {
-  // 自動引導用戶去 Admin Dashboard
   redirect('/admin/dashboard');
 }
